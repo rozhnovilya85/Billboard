@@ -15,8 +15,10 @@ class CityResource(resources.ModelResource):
     class Meta:
         model = City
         skip_unchanged = True
-        import_id_fields = ('city',)
-        fields = ('id', 'city',)
+        report_skipped = True
+        exclude = ('id', 'city',)
+        # import_id_fields = ('city',)
+        # fields = ('id', 'city',)
 
 
 
