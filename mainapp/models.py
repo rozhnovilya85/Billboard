@@ -40,7 +40,7 @@ class BillboardDB(models.Model):
 
 class City(models.Model):
 
-    city = models.CharField(max_length=30, unique=True, verbose_name='Город')
+    city = models.CharField(max_length=30, verbose_name='Город')
 
     def __str__(self):  # Переопределение названия объекта
         return self.city

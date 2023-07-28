@@ -10,17 +10,19 @@ from import_export import fields, resources
 
 class CityResource(resources.ModelResource):
 
-    город = Field(attribute='xxx', column_name='xxx')
+    city = Field(attribute='city', column_name='city')
 
     class Meta:
         model = City
         skip_unchanged = True
+        import_id_fields = ('city',)
+        fields = ('id', 'city',)
 
 
 
 
 class CityAdmin(ImportExportActionModelAdmin):
-    list_display = ('id', 'город')
-    list_display_links = ('id', 'город')
+    list_display = ('id', 'city')
+    list_display_links = ('id', 'city')
 
 admin.site.register(City, CityAdmin)
